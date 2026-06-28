@@ -1,0 +1,6 @@
+В debian очень консервативные правила ssh и если у нас отсутствуют ключи в /etc/ssh/ то он не поднимает ssh.service
+Из за этого например ansible не может достучаться до хоста и в целом подключиться получается невозможно 
+
+Закинуть в /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable ssh-host-keygen.service
